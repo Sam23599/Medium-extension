@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "Hide Element Extension",
+    "version": "1.0",
+    "description": "A simple extension to hide a specific element on web pages.",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "https://medium.com/"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "48": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://medium.com/"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
